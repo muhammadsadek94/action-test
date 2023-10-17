@@ -1,0 +1,16 @@
+
+on: push
+
+name: Integration
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v2       #name/repo
+      - uses: actions/setup-go@v4
+        with:
+          go-version: '^1.13.1'   # install <any-packages github-actions>.    Refer:https://github.com/actions/setup-go
+      - run: |                          #to write many orders
+          echo Hello-World
+          go build 
